@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Al-rushd Online School</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <!-- Favicons -->
+    <link href="assets/img/logo.png" rel="icon">
+    <link href="assets/img/logo.png" rel="apple-touch-icon">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet">
+
+
+
+</head>
+
+<body class="index-page">
+
+    <!-- ======= Main Section ======= -->
+    <main class="main">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- Form Section -->
+                <div class="col-lg-12" style="background-color: #f6f5f5;min-height: 100vh;">
+
+                    <div class="row py-3">
+                        <div class="col-lg-5 col-12">
+                            <a href="index.html" class="range-logo">
+                                <img src="assets/img/logo.png" alt="">
+                            </a>
+                        </div>
+                        <div class="col-12 col-lg-7 d-flex justify-content-around justify-content-lg-start">
+                            <div class="range-wrapper d-lg-flex align-items-center text-center text-lg-start py-4">
+                                <div class="range">
+                                    <p>Estimated time remaining: 12 minutes</p>
+                                    <div class="progress-bar-wrapper">
+                                        <div class="progress-bar-fill" style="width: 50%;"></div>
+                                        <span class="progress-percent">50%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row pt-5">
+                        <div class="col-lg-5 m-auto">
+                            <h4 class="text-center pb-5">How many students would you like to enrol?</h4>
+
+                            <div class="student-icons" id="iconContainer">
+                                <!-- Student icons will be rendered dynamically -->
+                            </div>
+
+                            <div class="controls pt-3">
+                                <button onclick="decrease()">−</button>
+                                <div class="number-box" id="countDisplay">1</div>
+                                <button onclick="increase()">+</button>
+                            </div>
+
+                            <!-- <button class="continue-btn">Continue</button> -->
+                            <div class="text-center pt-5">
+                                <a href="step-5.html" class="continue-btn d-block">Continue</a>
+                                <div class="back">← Back</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+                </div>
+
+
+            </div>
+        </div>
+    </main>
+
+
+
+    <!-- Vendor JS Files -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+    <script>
+        let count = 1;
+        const maxCount = 20;
+        const iconContainer = document.getElementById('iconContainer');
+        const countDisplay = document.getElementById('countDisplay');
+
+        function renderIcons() {
+            iconContainer.innerHTML = '';
+            const iconsToShow = Math.min(count, 4);
+            for (let i = 0; i < iconsToShow; i++) {
+                const icon = document.createElement('div');
+                icon.classList.add('icon');
+                icon.innerHTML = '<i class="bi bi-person-fill"></i>'; // Bootstrap Icon
+                iconContainer.appendChild(icon);
+            }
+            if (count > 4) {
+                const more = document.createElement('div');
+                more.classList.add('plus-icon');
+                more.innerText = '+';
+                iconContainer.appendChild(more);
+            }
+        }
+
+        function increase() {
+            if (count < maxCount) {
+                count++;
+                countDisplay.innerText = count;
+                renderIcons();
+            }
+        }
+
+        function decrease() {
+            if (count > 1) {
+                count--;
+                countDisplay.innerText = count;
+                renderIcons();
+            }
+        }
+
+        // Initial render
+        renderIcons();
+    </script>
+
+
+
+</body>
+
+</html>

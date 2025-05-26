@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Al-rushd Online School</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <!-- Favicons -->
+    <link href="assets/img/logo.png" rel="icon">
+    <link href="assets/img/logo.png" rel="apple-touch-icon">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f9f9f9;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .form-container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        }
+
+        .form-heading {
+            font-weight: 600;
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-box {
+            background-color: #fff;
+            padding: 40px 30px;
+            border-radius: 10px;
+            border-left: 4px solid #eee;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        }
+
+        .info-box h4 {
+            font-weight: 600;
+        }
+
+        .info-step {
+            margin-bottom: 1.5rem;
+        }
+
+        .info-step span {
+            display: inline-block;
+            background: #f1f1f1;
+            color: #333;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: 600;
+        }
+
+        .btn-continue:disabled {
+            background-color: #ccc;
+            color: #fff;
+            border: none;
+            width: 100%;
+            padding: 12px;
+            font-weight: 600;
+            cursor: not-allowed;
+            border-radius: 5px;
+        }
+
+        .btn-continue:not(:disabled) {
+            background-color: #84c225;
+            color: #fff;
+            border: none;
+            width: 100%;
+            padding: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(132, 194, 37, 0.6);
+            transition: background-color 0.3s ease;
+            border-radius: 5px;
+        }
+
+        .form-select:focus,
+        .form-control:focus {
+            border-color: #84c225;
+            box-shadow: 0 0 0 0.2rem rgba(132, 194, 37, 0.25);
+            outline: none;
+        }
+
+        .form-check-label {
+            font-size: 0.9rem;
+        }
+
+        .timetable-option {
+            border: 2px solid transparent;
+            border-radius: 10px;
+            padding: 30px;
+            /* Extra top padding for the circle */
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background-color: white;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .timetable-option .checkmark {
+            width: 36px;
+            height: 36px;
+            margin: auto;
+            border-radius: 50%;
+            border: 2px solid #ccc;
+            background-color: white;
+            color: transparent;
+            font-size: 18px;
+            line-height: 32px;
+            text-align: center;
+            transition: all 0.3s ease;
+            z-index: 1;
+        }
+
+        .timetable-option.active {
+            border-color: #84c225;
+            background-color: #f3fbef;
+        }
+
+        .timetable-option.active .checkmark {
+            background-color: #4CAF50;
+            border-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+
+<body class="index-page">
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="header d-flex align-items-center sticky-top">
+        <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+            <a href="index.html" class="logo d-flex align-items-center me-auto">
+                <img src="assets/img/logo.png" alt="">
+                <span>.</span>
+            </a>
+
+            <nav id="navmenu" class="m-auto navmenu">
+                <ul>
+                    <li><a href="#hero" class="active">Primary<br></a></li>
+                    <li><a href="#about">Seconday</a></li>
+                    <li><a href="#services">Sixth Form</a></li>
+                    <li><a href="#portfolio">About Us</a></li>
+                    <li><a href="#team">How we teach</a></li>
+                </ul>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            </nav>
+
+            <a class="btn-getstarted" href="index.html#about">ENQUIRE</a>
+            <a class="btn-getstarted register" href="index.html#about">REGISTER NOW</a>
+
+        </div>
+    </header>
+
+    <!-- ======= Main Section ======= -->
+    <main class="main">
+        <div class="container py-5">
+            <div class="row g-5">
+                <!-- Form Section -->
+                <div class="col-lg-7">
+                    <p>Student 1</p>
+                    <p>Subject Selector - Stage 1 of 2</p>
+                    <b>Choose 1 language subject</b>
+                    <p>
+                        <span>Seven subjects are included in the standard package.</span>
+                    <ul>
+                        <li>You can take more than this, but there will be an additional cost</li>
+                        <li>You can take less than this, but the cost will remain the same</li>
+                    </ul>
+                    </p>
+                    <hr>
+                    <div class="row justify-content-start g-4 mb-4">
+                        <div class="col-12">
+                            <h4 class="text-start">Core Subjects</h4>
+                        </div>
+                        <div class="col-lg-4 col-12">
+                            <div class="timetable-option active" onclick="selectTimetable(this)">
+                                <div class="checkmark">✔</div>
+                                <h5 class="mt-4">Mathematics</h5>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-12">
+                            <div class="timetable-option active" onclick="selectTimetable(this)">
+                                <div class="checkmark">✔</div>
+                                <h5 class="mt-4">English</h5>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-12">
+                            <div class="timetable-option active" onclick="selectTimetable(this)">
+                                <div class="checkmark">✔</div>
+                                <h5 class="mt-4">Humanities</h5>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-12">
+                            <div class="timetable-option active" onclick="selectTimetable(this)">
+                                <div class="checkmark">✔</div>
+                                <h5 class="mt-4">Science</h5>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-12">
+                            <div class="timetable-option active" onclick="selectTimetable(this)">
+                                <div class="checkmark">✔</div>
+                                <h5 class="mt-4">STEM</h5>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-12">
+                            <div class="timetable-option active" onclick="selectTimetable(this)">
+                                <div class="checkmark">✔</div>
+                                <h5 class="mt-4">Creative Media</h5>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row justify-content-start g-4 mb-4">
+                        <div class="col-12">
+                            <h4 class="text-start">All students must take the following core subjects</h4>
+                        </div>
+                        <div class="col-lg-4 col-12">
+                            <div class="timetable-option" onclick="selectTimetable(this)">
+                                <div class="checkmark">✔</div>
+                                <h5 class="mt-4">Arabic</h5>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-12">
+                            <div class="timetable-option" onclick="selectTimetable(this)">
+                                <div class="checkmark">✔</div>
+                                <h5 class="mt-4">French</h5>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+
+                <!-- Info Sidebar -->
+                <div class="col-lg-5">
+                    <div class="h-100 info-box">
+                        <h4 class="mb-4">Summary</h4>
+                        <b>Raju Gaines</b>
+                        <span>Primary, Key Stage 2: <br> Age 7 to 11</span>
+
+                        <hr>
+
+                        <p>7 Subject Package</p>
+                        <b>Essentials</b>
+                        <br><br>
+
+                        <div class="info-step">
+                            <span>1</span>
+                            <b>Mathematics</b>
+                        </div>
+                        <div class="info-step">
+                            <span>2</span>
+                            <b>English</b>
+                        </div>
+                        <div class="info-step">
+                            <span>3</span>
+                            <b>Humanities</b>
+                        </div>
+                        <div class="info-step">
+                            <span>4</span>
+                            <b>Science</b>
+                        </div>
+                        <div class="info-step">
+                            <span>5</span>
+                            <b>STEM</b>
+                        </div>
+                        <div class="info-step">
+                            <span>6</span>
+                            <b>Creative Media</b>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-8 m-auto">
+                                <div class="text-center mt-4">
+                                    <button class="btn btn-continue px-5 py-2" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal">Continue</button>
+                                    <div class="mt-2">
+                                        <a href="step-2.html" class="text-muted text-decoration-none">← Back</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer dark-background">
+        <div class="container footer-top">
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-6 footer-about">
+                    <a href="index.html" class="logo d-flex align-items-center">
+                        <img src="assets/img/logo.png" alt="">
+                    </a>
+                    <div class="footer-contact">
+                        <p>Address: Unit 8, Church Road Studios 62 Church Road London E12 6AF</p>
+                        <p class="mt-3"><strong>Phone:</strong> <span>+442036330757</span></p>
+                        <p><strong>Email:</strong> <span>admin@alrushd.co.uk</span></p>
+                    </div>
+                    <div class="social-links d-flex mt-4">
+                        <a href="#"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Partners</h4>
+                    <ul>
+                        <li><a href="#">Work With Us</a></li>
+                        <li><a href="#">Schools</a></li>
+                        <li><a href="#">Sports Academies</a></li>
+                        <li><a href="#">Agents</a></li>
+                        <li><a href="#">Resources Portal</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Our School</h4>
+                    <ul>
+                        <li><a href="#">Alumni</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Conditions of Attendance</a></li>
+                        <li><a href="#">Feedback</a></li>
+                        <li><a href="#">Safeguarding</a></li>
+                        <li><a href="#">School Policies</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Learning Stages</h4>
+                    <ul>
+                        <li><a href="#">Primary</a></li>
+                        <li><a href="#">Secondary</a></li>
+                        <li><a href="#">GCSE</a></li>
+                        <li><a href="#">Sixth Form</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Updates</h4>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Our Community</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container copyright text-center mt-4">
+            <p>Copyright 2025 © All Right Reserved by Al-rushd Online School Designed by
+                <a href="https://manage.alrushd.co.uk/">Raju Developer</a>
+            </p>
+        </div>
+    </footer>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body p-5">
+                    <h3 class="text-success">Additional subjects will be charged extra</h3>
+                    <p>
+                        You have selected seven subjects, which is the number included in the basic package. Any
+                        subjects above this number will be subject to an additional fee.
+                    </p>
+                    <div class="d-flex justify-content-around text-center">
+                        <a class="btn btn-warning btn-lg fw-bold">Next Steps</a>
+                        <a class="btn btn-warning btn-lg fw-bold">Next Steps</a>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+        <i class="bi bi-arrow-up-short"></i>
+    </a>
+
+    <!-- Vendor JS Files -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        function selectTimetable(element) {
+            document.querySelectorAll('.timetable-option').forEach(function (el) {
+                el.classList.remove('active');
+            });
+            element.classList.add('active');
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>

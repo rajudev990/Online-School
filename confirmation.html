@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Confirmation Al-rushd Online School</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <!-- Favicons -->
+    <link href="assets/img/logo.png" rel="icon">
+    <link href="assets/img/logo.png" rel="apple-touch-icon">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f9f9f9;
+        }
+
+        .pricing-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .timetable-option {
+            width: 300px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 0;
+            overflow: hidden;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .timetable-option .top-section {
+            padding: 20px;
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .timetable-option.active {
+            border-color: #4CAF50;
+            background-color: #f3fbef;
+        }
+
+        .timetable-option .checkmark {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 2px solid #ccc;
+            text-align: center;
+            line-height: 20px;
+            font-size: 16px;
+            background-color: white;
+            color: transparent;
+            transition: all 0.3s ease;
+        }
+
+        .timetable-option.active .checkmark {
+            background-color: #4CAF50;
+            border-color: #4CAF50;
+            color: white;
+        }
+
+        @media (max-width:575px) {
+            .pricing-container {
+                display: block;
+            }
+
+            .timetable-option {
+                width: 100%;
+                margin-bottom: 8px;
+            }
+        }
+
+        .best-value {
+            background-color: #002f5f;
+            color: white;
+            text-align: center;
+            font-size: 14px;
+            padding: 10px;
+        }
+
+        .pricing-body {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .pricing-body h2 {
+            font-size: 48px;
+            margin: 0;
+        }
+
+        .pricing-body .info {
+            margin: 10px 0;
+            color: #666;
+        }
+
+        .pricing-body .total-price {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .pricing-body .price-year {
+            font-size: 22px;
+            color: #333;
+            margin-top: 5px;
+        }
+
+        .confirmation .title {
+            color: #153256;
+            font-size: 3.1875rem51px;
+            font-weight: 700;
+            letter-spacing: -.06625rem;
+        }
+
+        .confirmation .description {
+            margin-bottom: 8px;
+            color: #153256;
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: -.06625rem;
+        }
+
+        /* new */
+        .note-section {
+            background-color: #f5f5f5;
+            padding: 20px;
+            max-width: 600px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .note-section h4 {
+            background-color: #dbeafe;
+            color: #1d4ed8;
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .note-section p {
+            color: #444;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .note-section a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .note-section a:hover {
+            text-decoration: underline;
+        }
+
+        .card {
+            background-color: white;
+            padding: 30px;
+            margin-top: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        .card h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .card .price {
+            font-size: 32px;
+            font-weight: bold;
+            margin: 20px 0;
+            color: #000;
+        }
+
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .checkbox-container input {
+            margin-right: 10px;
+        }
+
+        .checkbox-container label {
+            font-size: 14px;
+        }
+
+        .checkbox-container a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .checkbox-container a:hover {
+            text-decoration: underline;
+        }
+
+        .confirm-btn {
+            background-color: #ccc;
+            color: #555;
+            border: none;
+            padding: 12px 0;
+            width: 100%;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: not-allowed;
+            transition: all 0.3s ease;
+        }
+
+        .confirm-btn.enabled {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body class="index-page">
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="header d-flex align-items-center sticky-top">
+        <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+            <a href="index.html" class="logo d-flex align-items-center me-auto">
+                <img src="assets/img/logo.png" alt="">
+                <span>.</span>
+            </a>
+
+            <nav id="navmenu" class="m-auto navmenu">
+                <ul>
+                    <li><a href="#hero" class="active">Primary<br></a></li>
+                    <li><a href="#about">Seconday</a></li>
+                    <li><a href="#services">Sixth Form</a></li>
+                    <li><a href="#portfolio">About Us</a></li>
+                    <li><a href="#team">How we teach</a></li>
+                </ul>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            </nav>
+
+            <a class="btn-getstarted" href="index.html#about">ENQUIRE</a>
+            <a class="btn-getstarted register" href="index.html#about">REGISTER NOW</a>
+
+        </div>
+    </header>
+
+    <!-- ======= Main Section ======= -->
+    <main class="main">
+        <div class="container my-5 confirmation">
+
+            <div class="row">
+                <div class="col-lg-8 m-auto">
+                    <h1 class="title">Confirmation</h1>
+                    <p class="description mb-3">Please check that all information is correct before submitting. There
+                        will be a non-refundable £100 registration fee to pay in order to submit your enrolment.</p>
+                    <b>Parent/Guardian Information</b>
+                    <h2 class="mt-4">Nelle Crawford</h2>
+
+                    <div class="d-flex">
+                        <p>186 South Nobel Parkway</p>
+                        <p class="ms-5">nuqon@mailinator.com</p>
+                    </div>
+                    <div class="d-flex">
+                        <p>Et quas deserunt et 1200</p>
+                        <p class="ms-5">+880 1700000000</p>
+                    </div>
+
+                    <hr>
+
+
+                    <div class="py-3">
+                        <p>Student 1</p>
+                        <h2>Harrison Winters</h2>
+                        <p>01 / 04 / 2022</p>
+                        <p>Primary · Key Stage 2: Age 7 to 11</p>
+                    </div>
+
+                    <hr>
+
+
+                    <div class="py-3">
+                        <p>Student 2</p>
+                        <h2>Harrison Winters</h2>
+                        <p>01 / 04 / 2022</p>
+                        <p>Primary · Key Stage 2: Age 7 to 11</p>
+                    </div>
+
+                    <hr>
+
+
+                    <b>Contract Length</b>
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="row justify-content-start g-4 mb-4">
+                                <div class="col-12">
+                                    <h6>Choose a plan</h6>
+                                </div>
+
+                                <div class="pricing-container">
+                                    <!-- Annual Contract -->
+                                    <div class="timetable-option active" onclick="selectTimetable(this)">
+                                        <div class="top-section">
+                                            <div>
+                                                <strong>Annual Contract</strong>
+                                            </div>
+                                            <div class="checkmark">✔</div>
+                                        </div>
+                                        <div class="best-value">
+                                            Best value - save up to 23%<br>
+                                            Pay up front or on a monthly plan
+                                        </div>
+                                        <div class="pricing-body">
+                                            <h2>£575</h2>
+                                            <div class="info">Left to pay this school year</div>
+                                            <div class="info" style="color:#888;">£100 to pay now</div>
+                                            <div class="total-price">Price Per Full School Year</div>
+                                            <div class="price-year">£3,450</div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Half Termly Contract -->
+                                    <div class="timetable-option" onclick="selectTimetable(this)">
+                                        <div class="top-section">
+                                            <div>
+                                                <strong>Half termly<br>Contract</strong>
+                                            </div>
+                                            <div class="checkmark">✔</div>
+                                        </div>
+                                        <div class="pricing-body" style="background-color: #e8e8e8;">
+                                            <h2>£750</h2>
+                                            <div class="info">per half-term</div>
+                                            <div class="info">£750<br>Left to pay this school year</div>
+                                            <div class="info" style="color:#888;">£100 to pay now</div>
+                                            <div class="total-price">Price Per Full School Year</div>
+                                            <div class="price-year">£4,500</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="note-section">
+                        <h4>Please Note:</h4>
+                        <p>
+                        All students are subject to an additional annual technology fee of £50 per student which will be added to your first KIH invoice. 
+                        You can find more information on exactly what this fee covers 
+                        <a href="#">here</a>.
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Enrolment registration fee</h3>
+                        <p>Total to pay now</p>
+                        <div class="price">£100</div>
+
+                        <div class="checkbox-container">
+                        <input type="checkbox" id="agreeCheckbox">
+                        <label for="agreeCheckbox">I agree to the <a href="#">Terms and Conditions</a></label>
+                        </div>
+
+                        <button class="confirm-btn" id="confirmBtn" disabled>Confirm</button>
+                    </div>
+
+
+
+
+
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+    </main>
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer dark-background">
+        <div class="container footer-top">
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-6 footer-about">
+                    <a href="index.html" class="logo d-flex align-items-center">
+                        <img src="assets/img/logo.png" alt="">
+                    </a>
+                    <div class="footer-contact">
+                        <p>Address: Unit 8, Church Road Studios 62 Church Road London E12 6AF</p>
+                        <p class="mt-3"><strong>Phone:</strong> <span>+442036330757</span></p>
+                        <p><strong>Email:</strong> <span>admin@alrushd.co.uk</span></p>
+                    </div>
+                    <div class="social-links d-flex mt-4">
+                        <a href="#"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Partners</h4>
+                    <ul>
+                        <li><a href="#">Work With Us</a></li>
+                        <li><a href="#">Schools</a></li>
+                        <li><a href="#">Sports Academies</a></li>
+                        <li><a href="#">Agents</a></li>
+                        <li><a href="#">Resources Portal</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Our School</h4>
+                    <ul>
+                        <li><a href="#">Alumni</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Conditions of Attendance</a></li>
+                        <li><a href="#">Feedback</a></li>
+                        <li><a href="#">Safeguarding</a></li>
+                        <li><a href="#">School Policies</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Learning Stages</h4>
+                    <ul>
+                        <li><a href="#">Primary</a></li>
+                        <li><a href="#">Secondary</a></li>
+                        <li><a href="#">GCSE</a></li>
+                        <li><a href="#">Sixth Form</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Updates</h4>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Our Community</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container copyright text-center mt-4">
+            <p>Copyright 2025 © All Right Reserved by Al-rushd Online School Designed by
+                <a href="https://manage.alrushd.co.uk/">Raju Developer</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+        <i class="bi bi-arrow-up-short"></i>
+    </a>
+
+    <!-- Vendor JS Files -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function selectTimetable(element) {
+            document.querySelectorAll('.timetable-option').forEach(function (el) {
+                el.classList.remove('active');
+            });
+            element.classList.add('active');
+        }
+    </script>
+     <script>
+    const checkbox = document.getElementById('agreeCheckbox');
+    const confirmBtn = document.getElementById('confirmBtn');
+
+    checkbox.addEventListener('change', () => {
+      if (checkbox.checked) {
+        confirmBtn.disabled = false;
+        confirmBtn.classList.add('enabled');
+      } else {
+        confirmBtn.disabled = true;
+        confirmBtn.classList.remove('enabled');
+      }
+    });
+  </script>
+
+
+
+</body>
+
+</html>
