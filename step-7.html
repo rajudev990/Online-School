@@ -22,217 +22,88 @@
     <!-- Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet">
 
-    <style>
-        body {
-            background-color: #f9f9f9;
-        }
 
-        .timetable-option {
-            border: 2px solid transparent;
-            border-radius: 10px;
-            padding: 30px;
-            /* Extra top padding for the circle */
-            cursor: pointer;
-            transition: all 0.3s ease;
-            background-color: white;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            position: relative;
-        }
-
-        .timetable-option .checkmark {
-            width: 36px;
-            height: 36px;
-            margin: auto;
-            border-radius: 50%;
-            border: 2px solid #ccc;
-            background-color: white;
-            color: transparent;
-            font-size: 18px;
-            line-height: 32px;
-            text-align: center;
-            transition: all 0.3s ease;
-            z-index: 1;
-        }
-
-        .timetable-option.active {
-            border-color: #84c225;
-            background-color: #f3fbef;
-        }
-
-        .timetable-option.active .checkmark {
-            background-color: #4CAF50;
-            border-color: #4CAF50;
-            color: white;
-        }
-
-        .note {
-            font-size: 0.9rem;
-            color: #555;
-            margin-top: 20px;
-        }
-
-        .btn-continue {
-            background-color: #FFD600;
-            border: none;
-            font-weight: 600;
-        }
-         .btn-continue:hover{
-            background-color: #e9082a;
-            border: none;
-            color: white;
-            font-weight: 600;
-        }
-    </style>
 
 </head>
 
 <body class="index-page">
 
-    <!-- ======= Header ======= -->
-    <header id="header" class="header d-flex align-items-center sticky-top">
-        <div class="container-fluid container-xl position-relative d-flex align-items-center">
-
-            <a href="index.html" class="logo d-flex align-items-center me-auto">
-                <img src="assets/img/logo.png" alt="">
-                <span>.</span>
-            </a>
-
-            <nav id="navmenu" class="m-auto navmenu">
-                <ul>
-                    <li><a href="#hero" class="active">Primary<br></a></li>
-                    <li><a href="#about">Seconday</a></li>
-                    <li><a href="#services">Sixth Form</a></li>
-                    <li><a href="#portfolio">About Us</a></li>
-                    <li><a href="#team">How we teach</a></li>
-                </ul>
-                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-            </nav>
-
-            <a class="btn-getstarted" href="index.html#about">ENQUIRE</a>
-            <a class="btn-getstarted register" href="index.html#about">REGISTER NOW</a>
-
-        </div>
-    </header>
-
     <!-- ======= Main Section ======= -->
     <main class="main">
-        <div class="container my-5">
-            <h4 class="mb-4 text-center">Which qualification would you like to take?</h4>
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-8 m-auto">
-                    <div class="row justify-content-start g-4 mb-4">
-                        <div class="col-12">
-                            <h4 class="text-center">Choose your qualification</h4>
-                        </div>
-                        <div class="col-lg-6 col-12">
-                            <div class="timetable-option" onclick="selectTimetable(this)">
-                                <div class="checkmark">✔</div>
-                                <h5 class="mt-4">Primary - Core Package</h5>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-12">
-                            <div class="timetable-option" onclick="selectTimetable(this)">
-                                <div class="checkmark">✔</div>
-                                <h5 class="mt-4">Primary - 3 Subjects Package</h5>
-                            </div>
-                        </div>
+                <!-- Form Section -->
+                <div class="col-lg-12" style="background-color: #f6f5f5;min-height: 100vh;">
 
-                    </div>
-
-                    <div class="row">
-                        <div class="col-lg-8 m-auto">
-                            <div class="text-center mt-4">
-                                <!-- <button class="btn btn-continue px-5 py-2">Continue</button> -->
-                                <a href="step-8.html" class="btn btn-continue px-5 py-2">Continue</a>
-                                <div class="mt-2">
-                                    <a href="step-6.html" class="text-muted text-decoration-none">← Back</a>
+                    <div class="row py-3">
+                        <div class="col-lg-5 col-12">
+                            <a href="index.html" class="range-logo">
+                                <img src="assets/img/logo.png" alt="">
+                            </a>
+                        </div>
+                        <div class="col-12 col-lg-7 d-flex justify-content-around justify-content-lg-start">
+                            <div class="range-wrapper d-lg-flex align-items-center text-center text-lg-start py-4">
+                                <div class="range">
+                                    <p>Estimated time remaining: 12 minutes</p>
+                                    <div class="progress-bar-wrapper">
+                                        <div class="progress-bar-fill" style="width: 50%;"></div>
+                                        <span class="progress-percent">50%</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
+                    <div class="row pt-3">
+                        <div class="col-lg-5 m-auto">
+                            <h2 class="form-heading">Which qualification would you like to take?</h2>
+                        </div>
+                    </div>
+                    <div class="row mb-5 pb-5">
+                        <div class="col-lg-8 m-auto">
+                            <div class="row justify-content-center g-4 mb-4">
+                                <div class="col-12 pt-3">
+                                    <h4 class="text-center">Choose your qualification</h4>
+                                </div>
+                                <div class="col-lg-5 col-12">
+                                    <div class="timetable-option" onclick="selectTimetable(this)">
+                                        <div class="checkmark">✔</div>
+                                        <p class="mt-4">Primary - Core Package</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 col-12">
+                                    <div class="timetable-option" onclick="selectTimetable(this)">
+                                        <div class="checkmark">✔</div>
+                                        <p class="mt-4">Primary - 3 Subjects Package</p>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-8 m-auto">
+                                    <div class="text-center mt-4">
+                                        <!-- <button class="btn btn-continue px-5 py-2">Continue</button> -->
+                                        <a href="step-8.html" class="btn btn-continue px-5 py-2">Continue</a>
+                                        <div class="mt-2">
+                                            <a href="step-6.html" class="text-muted text-decoration-none">← Back</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
                 </div>
+
+
             </div>
         </div>
-
     </main>
 
-    <!-- ======= Footer ======= -->
-    <footer id="footer" class="footer dark-background">
-        <div class="container footer-top">
-            <div class="row gy-4">
-                <div class="col-lg-4 col-md-6 footer-about">
-                    <a href="index.html" class="logo d-flex align-items-center">
-                        <img src="assets/img/logo.png" alt="">
-                    </a>
-                    <div class="footer-contact">
-                        <p>Address: Unit 8, Church Road Studios 62 Church Road London E12 6AF</p>
-                        <p class="mt-3"><strong>Phone:</strong> <span>+442036330757</span></p>
-                        <p><strong>Email:</strong> <span>admin@alrushd.co.uk</span></p>
-                    </div>
-                    <div class="social-links d-flex mt-4">
-                        <a href="#"><i class="bi bi-twitter-x"></i></a>
-                        <a href="#"><i class="bi bi-facebook"></i></a>
-                        <a href="#"><i class="bi bi-instagram"></i></a>
-                        <a href="#"><i class="bi bi-linkedin"></i></a>
-                    </div>
-                </div>
 
-                <div class="col-lg-2 col-md-3 footer-links">
-                    <h4>Partners</h4>
-                    <ul>
-                        <li><a href="#">Work With Us</a></li>
-                        <li><a href="#">Schools</a></li>
-                        <li><a href="#">Sports Academies</a></li>
-                        <li><a href="#">Agents</a></li>
-                        <li><a href="#">Resources Portal</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-2 col-md-3 footer-links">
-                    <h4>Our School</h4>
-                    <ul>
-                        <li><a href="#">Alumni</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Conditions of Attendance</a></li>
-                        <li><a href="#">Feedback</a></li>
-                        <li><a href="#">Safeguarding</a></li>
-                        <li><a href="#">School Policies</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-2 col-md-3 footer-links">
-                    <h4>Learning Stages</h4>
-                    <ul>
-                        <li><a href="#">Primary</a></li>
-                        <li><a href="#">Secondary</a></li>
-                        <li><a href="#">GCSE</a></li>
-                        <li><a href="#">Sixth Form</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-2 col-md-3 footer-links">
-                    <h4>Updates</h4>
-                    <ul>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Our Community</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="container copyright text-center mt-4">
-            <p>Copyright 2025 © All Right Reserved by Al-rushd Online School Designed by
-                <a href="https://manage.alrushd.co.uk/">Raju Developer</a>
-            </p>
-        </div>
-    </footer>
-
-    <!-- Scroll Top -->
-    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
-        <i class="bi bi-arrow-up-short"></i>
-    </a>
 
     <!-- Vendor JS Files -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -247,8 +118,6 @@
 
     <!-- Main JS File -->
     <script src="assets/js/main.js"></script>
-    <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         function selectTimetable(element) {
             document.querySelectorAll('.timetable-option').forEach(function (el) {

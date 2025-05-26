@@ -1430,6 +1430,19 @@ section,
   position: relative;
 }
 
+.timetable-option-another{
+  padding: 10px !important;
+  border-radius: 5px !important;
+}
+.timetable-title{
+  font-weight: 500;
+  color: #153256;
+  font-size: 1.125rem;
+  letter-spacing: -.0125rem;
+  line-height: 1.3125rem;
+  margin-top: 12px;
+  text-align: center;
+}
 .timetable-option .checkmark {
   width: 36px;
   height: 36px;
@@ -1443,6 +1456,12 @@ section,
   text-align: center;
   transition: all 0.3s ease;
   z-index: 1;
+}
+
+.timetable-option-another .checkmark {
+    width: 25px !important;
+    height: 25px !important;
+    line-height: 25px !important;
 }
 
 .timetable-option.active {
@@ -1578,3 +1597,10 @@ section,
     display: inline-block;
 }
 /* Students Icon */
+
+/* Modal Button */
+@media (max-width:575px) {
+  .modalbutton a{
+    font-size: 18px;
+  }
+}
